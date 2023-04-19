@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification Form</title>
+    <link rel="stylesheet" href="../static/style2.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>OTP simulation</title>
+    <script src="../static/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+      <header>
+        <i class="bx bxs-check-shield"></i>
+      </header>
+      <h4>Enter OTP Code</h4>
+      <form method="POST">
+        <div class="input-field">
+          <input type="number" name="0"/>
+          <input type="number" name="1" disabled />
+          <input type="number" name="2" disabled />
+          <input type="number" name="3" disabled />
+          <input type="number" name="4" disabled />
+          <input type="number" name="5" disabled />
+        </div>
+        <button type="submit" >Verify OTP</button>
+      </form>
+    </div>
+  </body>
+</html>
+
